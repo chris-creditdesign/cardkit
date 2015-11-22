@@ -10,7 +10,7 @@ angular.module('cardkitApp')
   .directive('imageEditor', function () {
     return {
       template: '<div>' +
-            '<label>Image</label>' +
+            '<label>Upload an image</label>' +
             '<div class="dropzone" drop="onDrop($data, $event, key)" drop-effect="copy" drop-accept="\'Files\'" drag-over-class="drag-over-accept">' +
               
               '<div class="fileInputWrapper button">' +

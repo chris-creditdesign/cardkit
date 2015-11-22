@@ -13,24 +13,14 @@ angular.module('cardkitApp')
     $scope.config = {
       sizes: [
         {
-          name: 'Facebook',
-          width: 800,
-          height: 370,
-        },
-        {
           name: 'Twitter',
-          width: 650,
-          height: 320,
-        },
-        {
-          name: 'Video',
-          width: 640,
-          height: 360,
-        },
+          width: 800,
+          height: 400,
+        }
       ],
       themes: themeConfig,
       output: {
-        scale: 2,
+        scale: 1,
         editable: {
           scale: true
         }
@@ -62,7 +52,7 @@ angular.module('cardkitApp')
             }
           },
           {
-            name: 'Image',
+            name: 'Background Image',
             type: 'image',
             width: 600,
             height: function() {
@@ -89,56 +79,37 @@ angular.module('cardkitApp')
             }
           },
           {
-            name: 'Logo',
-            type: 'image',
-            width: 250,
-            height: function() {
-              return this.width;
-            },
-            src: function() {
-              return $scope.theme.logoSrc;
-            },
-            opacity: 1,
-            x: 50,
-            y: 270,
-            preserveAspectRatio: 'xMinYMin meet',
-            editable: {
-              src: true,
-              width: true,
-            },
-            draggable: true
-          },
-          {
-            name: 'Credit',
+            name: 'Headline',
             type: 'text',
-            text: 'Credit: Insert name here',
+            text: 'New Act Night!',
             fill: function() {
               return $scope.theme.quote;
             },
-            fontSize: 12,
+            fontSize: 80,
             fontFamily: function() {
               return $scope.theme.headlineFont;
             },
             textAnchor: 'start',
             x: 50,
-            y: 250,
+            y: 100,
             draggable: true,
             editable: {
               text: true,
-              fontSize: {
-                'Small (12px)' : 12,
-                'Medium (18px)': 18,
-                'Large (22px)': 22,
-                'Extra Large (36px)': 36,
-              },
               fill: 'picker',
-              textAnchor: true
+              textAnchor: true,
+              fontSize: {
+                '26px Small': 26,
+                '32px Medium': 32,
+                '40px Large': 40,
+                '60px Mental': 60,
+                '80px Insane': 80
+              },
             },
           },
           {
-            name: 'Headline',
+            name: 'Blurb',
             type: 'text',
-            text: 'Edit this text, and drag it around.\n\nYou can upload your own background image,\nlogo, and change the colour of the text too.',
+            text: "MC Angela Barnes hosts as the latest fresh new fledgling \ncomics from Jill Edwards Stand-Up Comedy Course at \nBrighton's Komedia take to the stage for the very first time.",
             fill: function() {
               return $scope.theme.quote;
             },
@@ -148,20 +119,72 @@ angular.module('cardkitApp')
             },
             textAnchor: 'start',
             x: 50,
-            y: 55,
+            y: 160,
             draggable: true,
             editable: {
               text: true,
-              fill: 'picker',
-              textAnchor: true,
               fontSize: {
-                'Small (18px)': 18,
-                'Medium (26px)': 26,
-                'Large (32px)': 32,
-                'Extra Large (40px)': 40,
+                '26px Small': 26,
+                '32px Medium': 32,
+                '40px Large': 40,
+                '60px Mental': 60,
+                '80px Insane': 80
               },
+              fill: 'picker',
+              textAnchor: true 
             },
           },
+          {
+            name: 'Details',
+            type: 'text',
+            text: 'Tuesday 1st December £7/£5 Doors 7pm \nkomedia.co.uk/brighton',
+            fill: function() {
+              return $scope.theme.quote;
+            },
+            fontSize: 22,
+            fontFamily: function() {
+              return $scope.theme.headlineFont;
+            },
+            textAnchor: 'start',
+            x: 50,
+            y: 340,
+            draggable: true,
+            editable: {
+              text: true,
+              fontSize: {
+                '26px Tiny': 22,
+                '26px Small': 26,
+                '32px Medium': 32,
+                '40px Large': 40,
+                '60px Mental': 60,
+                '80px Insane': 80
+              },
+              fill: 'picker',
+              textAnchor: true 
+            },
+          },
+
+          {
+            name: 'Logo',
+            type: 'image',
+            width: 300,
+            height: function() {
+              return this.width;
+            },
+            src: function() {
+              return $scope.theme.logoSrc;
+            },
+            opacity: 1,
+            x: 40,
+            y: 130,
+            preserveAspectRatio: 'xMinYMin meet',
+            editable: {
+              src: true,
+              width: true,
+            },
+            draggable: true
+          },
+
         ],
       }
     };
@@ -188,7 +211,7 @@ angular.module('cardkitApp')
     });
 
     $scope.resetSvg = function() {
-      $scope.config.svg = $scope.defaultConfig.svg
+      $scope.config.svg = $scope.defaultConfig.svg;
       createConfigCopy();
     };
 
