@@ -4,4 +4,7 @@ node_modules
 bower_components/*
 .DS_Store
 
+app/fonts/
+ref/
+
 !bower_components/saveSvgAsPng
