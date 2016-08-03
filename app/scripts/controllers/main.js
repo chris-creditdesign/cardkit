@@ -113,11 +113,11 @@ angular.module('cardkitApp')
             fill: function() {
               return $scope.theme.quote;
             },
-            fontSize: 40,
+            fontSize: 48,
             fontFamily: function() {
               return $scope.theme.headline.font;
             },
-            fontWeight: 100,
+            fontWeight: "normal",
             lineHeight: function() {
               return this.fontSize*1.3;
             },
@@ -131,10 +131,9 @@ angular.module('cardkitApp')
               fill: 'picker',
               textAnchor: true,
               fontSize: {
-                'Small (18px)': 18,
-                'Medium (26px)': 26,
-                'Large (32px)': 32,
-                'Extra Large (40px)': 40,
+                'Medium (36px)': 36,
+                'Large (48px)': 48,
+                'Extra Large (60px)': 60,
               },
             },
             useAsFilename: true
@@ -148,7 +147,7 @@ angular.module('cardkitApp')
             },
             fontSize: 24,
             lineHeight: 22,
-            fontWeight: 100,
+            fontWeight: "normal",
             fontFamily: function() {
               return $scope.theme.url.font;
             },

@@ -10,12 +10,11 @@ angular.module('cardkitApp')
   .directive('textanchorEditor', function () {
     return {
       template: '<div>' +
-            '<label>Text Anchor</label>' +
+            '<label>Align Text</label>' +
             '<select ng-model="element.textAnchor" class="form-control">' +
-              '<option value="">-- Select a Text Anchor --</option>' +
-              '<option value="start">Start</option>' +
-              '<option value="middle">Middle</option>' +
-              '<option value="end">End</option>' +
+              '<option value="start">Left</option>' +
+              '<option value="middle">Centre</option>' +
+              '<option value="end">Right</option>' +
             '</select>' +
           '</div>',
       restrict: 'E',
