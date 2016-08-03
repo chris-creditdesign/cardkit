@@ -17,6 +17,12 @@ angular.module('cardkitApp')
           width: 800 ,
           height: 400,
           default: true
+        },
+        {
+          name: 'Video',
+          width: 1280 ,
+          height: 720,
+          default: false
         }
       ],
       themes: themeConfig,
@@ -84,20 +90,20 @@ angular.module('cardkitApp')
             name: 'Logo',
             type: 'image',
             width: function() {
-              return $scope.theme.logoSize[0];
+              return $scope.theme.logo.size[0];
             },
             height: function() {
-              return $scope.theme.logoSize[1];
+              return $scope.theme.logo.size[1];
             },
             opacity: 1,
             src: function() {
-              return $scope.theme.logoSrc;
+              return $scope.theme.logo.src;
             },
             x: function () {
-              return $scope.theme.logoPosition[0];
+              return $scope.theme.logo.position[0];
             },
             y: function() {
-              return $scope.theme.logoPosition[1];
+              return $scope.theme.logo.position[1];
             },
             preserveAspectRatio: 'xMinYMin meet',
             editable: {
