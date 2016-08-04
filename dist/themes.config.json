@@ -2,9 +2,9 @@
 {
 	"name": "Black nature logo to the left",
 	"default": true,
-	"background": "#efefef",
-	"headline": "#3a3a3a",
-	"quote": "#3a3a3a",
+	"background": "#f2f0e6",
+	"headline": "#000000",
+	"quote": "#000000",
 	"headline": {
 		"font": "GlosaMath-Roman, Georgia, Times, \"Times New Roman\", serif"
 	},
@@ -24,9 +24,9 @@
 {
 	"name": "White Nature Logo to the left",
 	"default": false,
-	"background": "#bf0222",
-	"headline": "#efefef",
-	"quote": "#efefef",
+	"background": "#c50a26",
+	"headline": "#ffffff",
+	"quote": "#ffffff",
 	"headline": {
 		"font": "GlosaMath-Roman, Georgia, Times, \"Times New Roman\", serif"
 	},
@@ -46,9 +46,9 @@
 {
 	"name": "Black Nature Logo to the right",
 	"default": false,
-	"background": "#efefef",
-	"headline": "#3a3a3a",
-	"quote": "#3a3a3a",
+	"background": "#f2f0e6",
+	"headline": "#000000",
+	"quote": "#000000",
 	"headline": {
 		"font": "GlosaMath-Roman, Georgia, Times, \"Times New Roman\", serif"
 	},
@@ -68,9 +68,9 @@
 {
 	"name": "White Nature Logo to the right",
 	"default": false,
-	"background": "#bf0222",
-	"headline": "#efefef",
-	"quote": "#efefef",
+	"background": "#c50a26",
+	"headline": "#ffffff",
+	"quote": "#ffffff",
 	"headline": {
 		"font": "GlosaMath-Roman, Georgia, Times, \"Times New Roman\", serif"
 	},
@@ -90,9 +90,9 @@
 {
 	"name": "Black Circle Logo to the right",
 	"default": false,
-	"background": "#efefef",
-	"headline": "#3a3a3a",
-	"quote": "#3a3a3a",
+	"background": "#f2f0e6",
+	"headline": "#000000",
+	"quote": "#000000",
 	"headline": {
 		"font": "GlosaMath-Roman, Georgia, Times, \"Times New Roman\", serif"
 	},
@@ -112,9 +112,9 @@
 {
 	"name": "White Circle Logo to the right",
 	"default": false,
-	"background": "#bf0222",
-	"headline": "#efefef",
-	"quote": "#efefef",
+	"background": "#c50a26",
+	"headline": "#ffffff",
+	"quote": "#ffffff",
 	"headline": {
 		"font": "GlosaMath-Roman, Georgia, Times, \"Times New Roman\", serif"
 	},
