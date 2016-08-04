@@ -12,7 +12,7 @@ angular.module('cardkitApp')
       template: '<div>' + 
                   '<label>Colour</label>' + 
                     '<select ng-model="element.fill" ng-options="name for (name, value) in field" class="form-control">' + 
-                      '<option value="">-- Select a Fill Color --</option>' + 
+                      '<option value="">-- Select a colour --</option>' + 
                     '</select>' + 
                   '</div>',
       restrict: 'E',

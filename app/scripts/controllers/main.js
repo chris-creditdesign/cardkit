@@ -145,7 +145,10 @@ angular.module('cardkitApp')
             showHoverArea: true,
             editable: {
               text: true,
-              fill: fillColours,
+              fill: {
+                    "Black": "#000000",
+                    "White": "#ffffff",
+              },
               textAnchor: true,
               fontSize: {
                 'Medium (36px)': 36,
@@ -179,7 +182,10 @@ angular.module('cardkitApp')
             showHoverArea: true,
             editable: {
               text: true,
-              fill: fillColours
+              fill: {
+                    "Black": "#000000",
+                    "White": "#ffffff",
+              }
             },
           },
           credit: {
@@ -203,7 +209,10 @@ angular.module('cardkitApp')
             showHoverArea: false,
             editable: {
               text: true,
-              fill: fillColours
+              fill: {
+                    "Black": "#000000",
+                    "White": "#ffffff",
+              }
             },
           }
         },
