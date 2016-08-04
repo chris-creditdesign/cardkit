@@ -310,7 +310,7 @@ angular.module('cardkitApp')
       var fileName = 'image.png';
 
       // If we found an appropriate element, set that as the title instead
-      if(fileNameElement) {
+      if(fileNameElement && fileNameElement.text.length > 0) {
         // We run `slugify()` here to make it an acceptable file name
         fileName = slugify(fileNameElement.text) + '.png';
       }
