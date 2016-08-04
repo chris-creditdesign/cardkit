@@ -1,5 +1,22 @@
 'use strict';
 
+var fillColours = {
+                    "Black": "#000000",
+                    "White": "#ffffff",
+                    "News Red": "#c50a26",
+                    "Dark red": "#8b0d16",
+                    "Light red": "#ea5153",
+                    "Dark blue": "#5a527e",
+                    "Light blue": "#8695c5",
+                    "Turquoise": "#75c6c5",
+                    "Dark green": "#3a4f3a",
+                    "Mid green": "#3f8688",
+                    "Light green": "#8fc297",
+                    "Brown": "#9d8672",
+                    "Light brown": "#decab2",
+                    "Yellow": "#fbbc33",
+                    "Light yellow": "#ffdc88"
+                  };
 /**
  * @ngdoc function
  * @name cardkitApp.controller:MainCtrl
@@ -50,7 +67,7 @@ angular.module('cardkitApp')
               return $scope.theme.background;
             },
             editable: {
-              fill: 'picker'
+              fill: fillColours
             }
           },
           image: {
@@ -128,7 +145,7 @@ angular.module('cardkitApp')
             showHoverArea: true,
             editable: {
               text: true,
-              fill: 'picker',
+              fill: fillColours,
               textAnchor: true,
               fontSize: {
                 'Medium (36px)': 36,
@@ -162,7 +179,7 @@ angular.module('cardkitApp')
             showHoverArea: true,
             editable: {
               text: true,
-              fill: 'picker'
+              fill: fillColours
             },
           },
           credit: {
@@ -186,7 +203,7 @@ angular.module('cardkitApp')
             showHoverArea: false,
             editable: {
               text: true,
-              fill: 'picker'
+              fill: fillColours
             },
           }
         },
