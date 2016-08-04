@@ -81,7 +81,6 @@
       <div class="panel" ng-show="config.themes">
         <h3 ng-click="themes = !themes"><i class="fa fa-caret-down" ng-hide="themes"></i><i class="fa fa-caret-right" ng-hide="!themes"></i> Theme <small>Choose the look and feel</small></h3>
         <select id="theme" ng-model="theme" ng-options="theme.name for theme in config.themes" class="form-control" ng-hide="themes">
-          <option value="">-- Choose theme --</option>
         </select>
       </div>
 
