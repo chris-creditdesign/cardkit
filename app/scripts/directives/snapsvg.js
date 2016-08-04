@@ -440,9 +440,9 @@ angular.module('cardkitApp')
 
         function resetSvg() {
           var els = s.selectAll('*');
-          angular.forEach(els, function(e, i) {
-            e.transform('');
-          });
+          // angular.forEach(els, function(e, i) {
+          //   e.transform('');
+          // });
         }
 
       	// Watch for changes on the scope and the theme, and redraw

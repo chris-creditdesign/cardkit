@@ -109,7 +109,7 @@ angular.module('cardkitApp')
           headline: {
             name: 'Headline',
             type: 'text',
-            text: 'Welcome to the Nature\nsocial media image generator\nadd an image below',
+            text: 'Welcome to the Nature\nsocial media image generator,\nplease upload an image and\ncustomise the design.',
             fill: function() {
               return $scope.theme.quote;
             },
@@ -123,7 +123,7 @@ angular.module('cardkitApp')
             },
             textAnchor: 'middle',
             x: '50%',
-            y: 150,
+            y: 100,
             draggable: true,
             showHoverArea: true,
             editable: {
@@ -160,6 +160,30 @@ angular.module('cardkitApp')
             y: 378,
             draggable: true,
             showHoverArea: true,
+            editable: {
+              text: true,
+              fill: 'picker'
+            },
+          },
+          credit: {
+            name: 'credit',
+            type: 'text',
+            text: 'Image credit',
+            fill: function() {
+              return $scope.theme.quote;
+            },
+            fontSize: 18,
+            lineHeight: 22,
+            fontWeight: "normal",
+            fontFamily: function() {
+              return $scope.theme.url.font;
+            },
+            textAnchor: "start",
+            x: 0,
+            y: 0,
+            transform: "translate(10, 10) rotate(90)",
+            draggable: false,
+            showHoverArea: false,
             editable: {
               text: true,
               fill: 'picker'
