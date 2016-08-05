@@ -17,6 +17,13 @@ var fillColours = {
                     "Yellow": "#fbbc33",
                     "Light yellow": "#ffdc88"
                   };
+
+var textColours = {
+                    "Black": "#000000",
+                    "White": "#ffffff",
+                    "Grey": "#808080"
+                  };
+
 /**
  * @ngdoc function
  * @name cardkitApp.controller:MainCtrl
@@ -145,10 +152,7 @@ angular.module('cardkitApp')
             showHoverArea: true,
             editable: {
               text: true,
-              fill: {
-                    "Black": "#000000",
-                    "White": "#ffffff",
-              },
+              fill: textColours,
               textAnchor: true,
               fontSize: {
                 'Medium (36px)': 36,
@@ -182,10 +186,7 @@ angular.module('cardkitApp')
             showHoverArea: true,
             editable: {
               text: true,
-              fill: {
-                    "Black": "#000000",
-                    "White": "#ffffff",
-              }
+              fill: textColours
             },
           },
           credit: {
@@ -209,10 +210,7 @@ angular.module('cardkitApp')
             showHoverArea: false,
             editable: {
               text: true,
-              fill: {
-                    "Black": "#000000",
-                    "White": "#ffffff",
-              }
+              fill: textColours
             },
           }
         },
