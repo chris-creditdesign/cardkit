@@ -24,6 +24,18 @@ var textColours = {
                     "Grey": "#808080"
                   };
 
+var fontSizes = {
+                '36px': 36,
+                '48px': 48,
+                '60px': 60,
+                '72px': 72
+              };
+
+var instagramRatio = 1.35;
+var urlFontSize = 24;
+var lineHeightRatio = 1.3;
+var creditFontSize = 18;
+
 /**
  * @ngdoc function
  * @name cardkitApp.controller:MainCtrl
@@ -37,19 +49,21 @@ angular.module('cardkitApp')
     $scope.config = {
       sizes: [
         {
-          name: 'Twitter',
+          name: 'Twitter 800 x 400',
           width: 800 ,
           height: 400,
           marginTop: 20,
           marginSide: 60,
+          small: true,
           default: false
         },
         {
-          name: 'Instgram',
+          name: 'Instgram 1080 x 1080',
           width: 1080 ,
           height: 1080,
           marginTop: 20,
           marginSide: 20,
+          small: false,
           default: true
         }
       ],
@@ -118,10 +132,18 @@ angular.module('cardkitApp')
             name: 'Logo',
             type: 'image',
             width: function() {
-              return $scope.theme.logo.width;
+              if ($scope.size.small) {
+                return $scope.theme.logo.width;
+              } else {
+                return $scope.theme.logo.width * instagramRatio;
+              }
             },
             height: function() {
-              return $scope.theme.logo.height;
+              if ($scope.size.small) {
+                return $scope.theme.logo.height;
+              } else {
+                return $scope.theme.logo.height * instagramRatio;            
+              }
             },
             opacity: 1,
             src: function() {
@@ -131,14 +153,14 @@ angular.module('cardkitApp')
               if ($scope.theme.logo.alignedLeft) {
                 return $scope.size.marginSide;
               } else {
-                return $scope.size.width - $scope.theme.logo.width - $scope.size.marginSide;
+                return $scope.size.width - this.width() - $scope.size.marginSide;
               }
             },
             y: function() {
                 if ($scope.theme.logo.alignedTop) {
                   return $scope.size.marginTop;
                 } else {
-                  return $scope.size.height - $scope.theme.logo.height - $scope.size.marginTop;
+                  return $scope.size.height - this.height() - $scope.size.marginTop;
                 }
             },
             preserveAspectRatio: 'xMinYMin meet',
@@ -161,7 +183,7 @@ angular.module('cardkitApp')
             },
             fontWeight: "normal",
             lineHeight: function() {
-              return this.fontSize*1.3;
+              return this.fontSize * lineHeightRatio;
             },
             textAnchor: 'middle',
             x: '50%',
@@ -174,11 +196,7 @@ angular.module('cardkitApp')
               text: true,
               fill: textColours,
               textAnchor: true,
-              fontSize: {
-                'Medium (36px)': 36,
-                'Large (48px)': 48,
-                'Extra Large (60px)': 60,
-              },
+              fontSize: fontSizes,
             },
             useAsFilename: true
           },
@@ -189,7 +207,14 @@ angular.module('cardkitApp')
             fill: function() {
               return $scope.theme.quote;
             },
-            fontSize: 24,
+            // fontSize: urlFontSize,
+            fontSize: function() {
+              if ($scope.size.small) {
+                return urlFontSize;
+              } else {
+                return urlFontSize * instagramRatio;
+              }
+            },
             lineHeight: 22,
             fontWeight: "normal",
             fontFamily: function() {
@@ -205,7 +230,6 @@ angular.module('cardkitApp')
                 return $scope.size.width - $scope.size.marginSide;
               }
             },
-            // y: 378,
             y: function () {
               return $scope.size.height - $scope.size.marginTop;
             },
@@ -223,7 +247,14 @@ angular.module('cardkitApp')
             fill: function() {
               return $scope.theme.quote;
             },
-            fontSize: 18,
+            // fontSize: creditFontSize,
+            fontSize: function() {
+              if ($scope.size.small) {
+                return creditFontSize;
+              } else {
+                return creditFontSize * instagramRatio;
+              }
+            },
             lineHeight: 22,
             fontWeight: "normal",
             fontFamily: function() {
