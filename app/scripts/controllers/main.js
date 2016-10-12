@@ -177,7 +177,7 @@ angular.module('cardkitApp')
             fill: function() {
               return $scope.theme.quote;
             },
-            fontSize: 48,
+            fontSize: fontSizes["48px"],
             fontFamily: function() {
               return $scope.theme.headline.font;
             },
@@ -207,7 +207,6 @@ angular.module('cardkitApp')
             fill: function() {
               return $scope.theme.quote;
             },
-            // fontSize: urlFontSize,
             fontSize: function() {
               if ($scope.size.small) {
                 return urlFontSize;
@@ -215,7 +214,9 @@ angular.module('cardkitApp')
                 return urlFontSize * instagramRatio;
               }
             },
-            lineHeight: 22,
+            lineHeight: function () {
+              return this.fontSize() * lineHeightRatio;
+            },
             fontWeight: "normal",
             fontFamily: function() {
               return $scope.theme.url.font;
@@ -237,7 +238,8 @@ angular.module('cardkitApp')
             showHoverArea: true,
             editable: {
               text: true,
-              fill: textColours
+              fill: textColours,
+              textAnchor: true
             },
           },
           credit: {
@@ -260,10 +262,30 @@ angular.module('cardkitApp')
             fontFamily: function() {
               return $scope.theme.url.font;
             },
-            textAnchor: "start",
-            x: 0,
-            y: 0,
-            transform: "translate(10, 10) rotate(90)",
+            textAnchor: function() {
+              return $scope.theme.credit.side ? "start" : "end";
+            },
+            x: function() {
+              if ($scope.theme.credit.side) {
+                return 0;
+              } else {
+                return $scope.size.width - $scope.size.marginSide;
+              }
+            },
+            y: function() {
+              if ($scope.theme.credit.side) {
+                return 0;
+              } else {
+                return $scope.size.height - $scope.size.marginTop;
+              }
+            },
+            transform: function() {
+              if ($scope.theme.credit.side) {
+                return "translate(10, 10) rotate(90)";
+              } else {
+                return "transform(0, 0)";
+              }
+            },
             draggable: false,
             showHoverArea: false,
             editable: {

@@ -20,7 +20,7 @@
 		"alignedTop": false
 	},
 	"credit": {
-		"transform": "rotate(50)"
+		"side": true
 	}
 },
 {
@@ -44,7 +44,7 @@
 		"alignedTop": false
 	},
 	"credit": {
-		"transform": "rotate(20)"
+		"side": true
 	}
 },
 {
@@ -68,7 +68,7 @@
 		"alignedTop": false
 	},
 	"credit": {
-		"transform": "rotate(20)"
+		"side": true
 	}
 },
 {
@@ -92,7 +92,7 @@
 		"alignedTop": false
 	},
 	"credit": {
-		"transform": "matrix(0.6428,0.766,-0.766,0.6428,0,0)"
+		"side": true
 	}
 },
 {
@@ -116,7 +116,7 @@
 		"alignedTop": true
 	},
 	"credit": {
-		"transform": "matrix(0.6428,0.766,-0.766,0.6428,0,0)"
+		"side": false
 	}
 },
 {
@@ -140,7 +140,7 @@
 		"alignedTop": true
 	},
 	"credit": {
-		"transform": "rotate(20)"
+		"side": false
 	}
 }
 ]
