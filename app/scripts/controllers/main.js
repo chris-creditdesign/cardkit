@@ -58,7 +58,7 @@ angular.module('cardkitApp')
           default: true
         },
         {
-          name: 'Instgram 1080 x 1080',
+          name: 'Instagram 1080 x 1080',
           width: 1080 ,
           height: 1080,
           marginTop: 20,
