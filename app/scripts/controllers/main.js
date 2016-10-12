@@ -249,7 +249,6 @@ angular.module('cardkitApp')
             fill: function() {
               return $scope.theme.quote;
             },
-            // fontSize: creditFontSize,
             fontSize: function() {
               if ($scope.size.small) {
                 return creditFontSize;
