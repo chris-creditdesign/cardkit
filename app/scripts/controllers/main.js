@@ -40,6 +40,16 @@ angular.module('cardkitApp')
           name: 'Twitter',
           width: 800 ,
           height: 400,
+          marginTop: 20,
+          marginSide: 60,
+          default: false
+        },
+        {
+          name: 'Instgram',
+          width: 1080 ,
+          height: 1080,
+          marginTop: 20,
+          marginSide: 20,
           default: true
         }
       ],
@@ -80,7 +90,7 @@ angular.module('cardkitApp')
           image: {
             name: 'Image',
             type: 'image',
-            width: 800,
+            width: 1080,
             height: function() {
               return this.width;
             },
@@ -108,20 +118,28 @@ angular.module('cardkitApp')
             name: 'Logo',
             type: 'image',
             width: function() {
-              return $scope.theme.logo.size[0];
+              return $scope.theme.logo.width;
             },
             height: function() {
-              return $scope.theme.logo.size[1];
+              return $scope.theme.logo.height;
             },
             opacity: 1,
             src: function() {
               return $scope.theme.logo.src;
             },
             x: function () {
-              return $scope.theme.logo.position[0];
+              if ($scope.theme.logo.alignedLeft) {
+                return $scope.size.marginSide;
+              } else {
+                return $scope.size.width - $scope.theme.logo.width - $scope.size.marginSide;
+              }
             },
             y: function() {
-              return $scope.theme.logo.position[1];
+                if ($scope.theme.logo.alignedTop) {
+                  return $scope.size.marginTop;
+                } else {
+                  return $scope.size.height - $scope.theme.logo.height - $scope.size.marginTop;
+                }
             },
             preserveAspectRatio: 'xMinYMin meet',
             draggable: {
@@ -147,7 +165,9 @@ angular.module('cardkitApp')
             },
             textAnchor: 'middle',
             x: '50%',
-            y: 100,
+            y: function() {
+              return $scope.size.height * 0.26;
+            },
             draggable: true,
             showHoverArea: true,
             editable: {
@@ -179,9 +199,16 @@ angular.module('cardkitApp')
               return $scope.theme.url.alignedLeft ? "start" : "end";
             },
             x: function() {
-              return $scope.theme.url.alignedLeft ? 60 : $scope.size.width - 60;
+              if ($scope.theme.url.alignedLeft) {
+                return $scope.size.marginSide;
+              } else {
+                return $scope.size.width - $scope.size.marginSide;
+              }
             },
-            y: 378,
+            // y: 378,
+            y: function () {
+              return $scope.size.height - $scope.size.marginTop;
+            },
             draggable: true,
             showHoverArea: true,
             editable: {
