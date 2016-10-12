@@ -55,7 +55,7 @@ angular.module('cardkitApp')
           marginTop: 20,
           marginSide: 60,
           small: true,
-          default: false
+          default: true
         },
         {
           name: 'Instgram 1080 x 1080',
@@ -64,7 +64,7 @@ angular.module('cardkitApp')
           marginTop: 20,
           marginSide: 20,
           small: false,
-          default: true
+          default: false
         }
       ],
       themes: themeConfig,
