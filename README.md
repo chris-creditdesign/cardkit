@@ -1,5 +1,13 @@
 # CardKit
 
+## Nature TODOs
+
+- [ ] Smaller headline text options
+- [ ] Moveable image credit
+- [ ] Shaddow boxes?
+- [ ] Hanging punctuation
+- [ ] Guides for twitter crops
+
 [![Join the chat at https://gitter.im/times/cardkit](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/times/cardkit?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ## Version 1.1.1
