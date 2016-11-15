@@ -31,10 +31,10 @@ var fontSizes = {
                 '72px': 72
               };
 
-var instagramRatio = 1.35;
-var urlFontSize = 24;
+var instagramRatio = 1;
+var urlFontSize = 36;
 var lineHeightRatio = 1.3;
-var creditFontSize = 18;
+var creditFontSize = 24;
 
 /**
  * @ngdoc function
@@ -49,11 +49,11 @@ angular.module('cardkitApp')
     $scope.config = {
       sizes: [
         {
-          name: 'Twitter 800 x 400',
-          width: 800 ,
-          height: 400,
-          marginTop: 20,
-          marginSide: 60,
+          name: 'Twitter 1066 x 600',
+          width: 1066 ,
+          height: 600,
+          marginTop: 40,
+          marginSide: 30,
           small: true,
           default: true
         },
@@ -104,7 +104,7 @@ angular.module('cardkitApp')
           image: {
             name: 'Image',
             type: 'image',
-            width: 1080,
+            width: 1600,
             height: function() {
               return this.width;
             },
@@ -177,7 +177,7 @@ angular.module('cardkitApp')
             fill: function() {
               return $scope.theme.quote;
             },
-            fontSize: fontSizes["48px"],
+            fontSize: fontSizes['60px'],
             fontFamily: function() {
               return $scope.theme.headline.font;
             },
@@ -188,7 +188,7 @@ angular.module('cardkitApp')
             textAnchor: 'middle',
             x: '50%',
             y: function() {
-              return $scope.size.height * 0.26;
+              return $scope.size.height * 0.3;
             },
             draggable: true,
             showHoverArea: true,
@@ -280,9 +280,9 @@ angular.module('cardkitApp')
             },
             transform: function() {
               if ($scope.theme.credit.side) {
-                return "translate(10, 10) rotate(90)";
+                return "translate(" + $scope.size.marginSide + ", " + $scope.size.marginTop + ") rotate(90)";
               } else {
-                return "transform(0, 0)";
+                return "translate(0, 0)";
               }
             },
             draggable: false,
