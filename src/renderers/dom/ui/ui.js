@@ -80,7 +80,7 @@ class UI extends React.Component {
 
   downloadCard () {
     // This is dumb, but allows us to get at the SVG element on the DOM, which we can then send off for download
-    this.props.cardKit.download(2, this.refs.canvas.refs.card.refs.svg);
+    this.props.cardKit.download(1, this.refs.canvas.refs.card.refs.svg);
   }
 
   handleSidebarChange (state) {
