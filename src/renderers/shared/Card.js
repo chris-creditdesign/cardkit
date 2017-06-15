@@ -280,6 +280,9 @@ class Card extends React.Component {
 
           {layerArray}
 
+          <rect x="0" y={-card.height} width={card.width} height={card.height} fill="#ffffff" />
+          <rect x="0" y={card.height} width={card.width} height={card.height} fill="#ffffff" />
+
         </SVG>
       </div>
     );
