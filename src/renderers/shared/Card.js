@@ -139,7 +139,7 @@ class Card extends React.Component {
 
       // Make the fill value map to a gradient name, if a gradient has been configured
       // See computeGradients() for the creation of gradient definitions
-      if (this.getLayerValue(layer, 'gradient', layers)) {
+      if (this.getLayerValue(layers, layer, 'gradient')) {
         layerData.fill = `url(#${key})`;
       }
 
@@ -153,6 +153,7 @@ class Card extends React.Component {
             y={this.calculateYPosition(layers, layerData)}
             fontFamily={layerData.fontFamily}
             fontSize={layerData.fontSize}
+            fontWeight={layerData.fontWeight}
             lineHeight={layerData.lineHeight}
             textAnchor={layerData.textAnchor}
             fill={layerData.fill}
@@ -278,6 +279,9 @@ class Card extends React.Component {
           </defs>
 
           {layerArray}
+
+          <rect x="0" y={-card.height} width={card.width} height={card.height} fill="#ffffff" />
+          <rect x="0" y={card.height} width={card.width} height={card.height} fill="#ffffff" />
 
         </SVG>
       </div>
