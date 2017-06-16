@@ -58,6 +58,15 @@ class TextControl extends React.Component {
         </div>
       );
     }
+
+    if (this.props.layer.editable.textAnchor === true) {
+      // We want a drop down for the textAnchor options
+      return (
+        <div>
+          <strong>Tech Anchor</strong>
+        </div>
+      )
+    }
   }
 
 }

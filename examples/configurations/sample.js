@@ -56,6 +56,8 @@ var configuration = {
       text: 'CardKit is a powerful image creation\nlibrary for browsers and servers',
       fontFamily: 'Helvetica',
       fontWeight: 'bold',
+      textAnchor: 'start',
+      draggable: true,
       editable: {
         text: {
           options: [
@@ -63,6 +65,7 @@ var configuration = {
             'CardKit can be used to create images for social\nmedia, marketing, education and more'
           ]
         },
+        textAnchor: true,
         fontSize: {
           min: 10,
           max: 50,

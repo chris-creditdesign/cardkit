@@ -7,7 +7,7 @@
 		exports["CardKitDOM"] = factory(require("react"), require("react-dom"), require("rvg.js"), require("deep-extend"), require("react-color"));
 	else
 		root["CardKitDOM"] = factory(root["react"], root["react-dom"], root["rvg.js"], root["deep-extend"], root["react-color"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_1__, __WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_4__, __WEBPACK_EXTERNAL_MODULE_7__, __WEBPACK_EXTERNAL_MODULE_30__) {
+})(this, function(__WEBPACK_EXTERNAL_MODULE_1__, __WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_4__, __WEBPACK_EXTERNAL_MODULE_7__, __WEBPACK_EXTERNAL_MODULE_31__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -70,9 +70,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	var Card = __webpack_require__(3);
 	var CardKitRenderer = __webpack_require__(5);
 	var UI = __webpack_require__(8);
-	var SVGToImage = __webpack_require__(49);
+	var SVGToImage = __webpack_require__(50);
 
-	var _require = __webpack_require__(28),
+	var _require = __webpack_require__(29),
 	    slugify = _require.slugify;
 
 	/**
@@ -1513,7 +1513,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = {
 	  Header: __webpack_require__(14),
 	  Sidebar: __webpack_require__(18),
-	  Canvas: __webpack_require__(46)
+	  Canvas: __webpack_require__(47)
 	};
 
 /***/ }),
@@ -1648,7 +1648,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    Theme = _require.Theme,
 	    Layout = _require.Layout;
 
-	var PanelButton = __webpack_require__(45);
+	var PanelButton = __webpack_require__(46);
 
 	// Sidebar class
 
@@ -1875,9 +1875,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	module.exports = {
 	  Content: __webpack_require__(22),
-	  Template: __webpack_require__(34),
-	  Theme: __webpack_require__(38),
-	  Layout: __webpack_require__(41)
+	  Template: __webpack_require__(35),
+	  Theme: __webpack_require__(39),
+	  Layout: __webpack_require__(42)
 	};
 
 /***/ }),
@@ -1900,7 +1900,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var LayerConfig = __webpack_require__(23);
 
 	// Styles
-	__webpack_require__(32);
+	__webpack_require__(33);
 
 	// Content class
 
@@ -1999,9 +1999,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	// Require in our controls
 	var TextControl = __webpack_require__(26);
-	var SizeControl = __webpack_require__(27);
-	var ColorControl = __webpack_require__(29);
-	var SourceControl = __webpack_require__(31);
+	var TextAnchorControl = __webpack_require__(27);
+	var SizeControl = __webpack_require__(28);
+	var ColorControl = __webpack_require__(30);
+	var SourceControl = __webpack_require__(32);
 
 	// LayerConfig class
 
@@ -2043,6 +2044,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	            'div',
 	            null,
 	            React.createElement(TextControl, { layer: this.props.layer,
+	              onNewValue: this.handleChange }),
+	            React.createElement(TextAnchorControl, { layer: this.props.layer,
 	              onNewValue: this.handleChange }),
 	            React.createElement(SizeControl, { name: 'fontSize',
 	              layer: this.props.layer,
@@ -2255,6 +2258,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	            onChange: this.handleChange })
 	        );
 	      }
+
+	      if (this.props.layer.editable.textAnchor === true) {
+	        // We want a drop down for the textAnchor options
+	        return React.createElement(
+	          'div',
+	          null,
+	          React.createElement(
+	            'strong',
+	            null,
+	            'Tech Anchor'
+	          )
+	        );
+	      }
 	    }
 	  }]);
 
@@ -2274,6 +2290,87 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	// Libraries
+	var React = __webpack_require__(1);
+
+	// TextAnchor class
+
+	var TextAnchorControl = function (_React$Component) {
+	  _inherits(TextAnchorControl, _React$Component);
+
+	  function TextAnchorControl(props) {
+	    _classCallCheck(this, TextAnchorControl);
+
+	    var _this = _possibleConstructorReturn(this, (TextAnchorControl.__proto__ || Object.getPrototypeOf(TextAnchorControl)).call(this, props));
+
+	    _this.handleChange = _this.handleChange.bind(_this);
+	    return _this;
+	  }
+
+	  _createClass(TextAnchorControl, [{
+	    key: 'handleChange',
+	    value: function handleChange(e) {
+	      var element = e.target;
+	      this.props.onNewValue('textAnchor', element.value);
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var alignOpts = [{ attr: 'start', show: 'left' }, { attr: 'middle', show: 'center' }, { attr: 'end', show: 'right' }];
+
+	      if (!this.props.layer.editable.textAnchor) return null;
+
+	      if (this.props.layer.editable.textAnchor === true) {
+	        // We have a select
+	        return React.createElement(
+	          'div',
+	          null,
+	          React.createElement(
+	            'strong',
+	            null,
+	            'Text Align'
+	          ),
+	          React.createElement(
+	            'select',
+	            { defaultValue: this.props.layer.textAnchor,
+	              onChange: this.handleChange },
+	            alignOpts.map(function (option, index) {
+	              return React.createElement(
+	                'option',
+	                { key: index, value: option.attr },
+	                option.show
+	              );
+	            })
+	          )
+	        );
+	      }
+	    }
+	  }]);
+
+	  return TextAnchorControl;
+	}(React.Component);
+
+	TextAnchorControl.propTypes = {
+	  onNewValue: React.PropTypes.func.isRequired,
+	  layer: React.PropTypes.object.isRequired
+
+	  // Export
+	};module.exports = TextAnchorControl;
+
+/***/ }),
+/* 28 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -2288,7 +2385,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	// Libraries
 	var React = __webpack_require__(1);
-	var helpers = __webpack_require__(28);
+	var helpers = __webpack_require__(29);
 
 	// SizeControl class
 
@@ -2388,7 +2485,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};module.exports = SizeControl;
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -2435,7 +2532,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2453,11 +2550,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	// Libraries
 	var React = __webpack_require__(1);
 
-	var _require = __webpack_require__(30),
+	var _require = __webpack_require__(31),
 	    ChromePicker = _require.ChromePicker,
 	    CirclePicker = _require.CirclePicker;
 
-	var helpers = __webpack_require__(28);
+	var helpers = __webpack_require__(29);
 
 	// ColorControl class
 
@@ -2550,13 +2647,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	};module.exports = ColorControl;
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports) {
 
-	module.exports = __WEBPACK_EXTERNAL_MODULE_30__;
+	module.exports = __WEBPACK_EXTERNAL_MODULE_31__;
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2680,13 +2777,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	};module.exports = SizeControl;
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(33);
+	var content = __webpack_require__(34);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(12)(content, {});
@@ -2706,7 +2803,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(11)();
@@ -2720,7 +2817,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2735,10 +2832,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	// Libraries
 	var React = __webpack_require__(1);
-	var CardTemplate = __webpack_require__(35);
+	var CardTemplate = __webpack_require__(36);
 
 	// Styles
-	__webpack_require__(36);
+	__webpack_require__(37);
 
 	// TemplatePanel class
 
@@ -2848,7 +2945,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};module.exports = TemplatePanel;
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2914,13 +3011,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	};module.exports = CardTemplate;
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(37);
+	var content = __webpack_require__(38);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(12)(content, {});
@@ -2940,7 +3037,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(11)();
@@ -2954,7 +3051,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2971,7 +3068,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var React = __webpack_require__(1);
 
 	// Styles
-	__webpack_require__(39);
+	__webpack_require__(40);
 
 	// ThemePanel class
 
@@ -3035,13 +3132,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	};module.exports = ThemePanel;
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(40);
+	var content = __webpack_require__(41);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(12)(content, {});
@@ -3061,7 +3158,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(11)();
@@ -3075,7 +3172,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3090,10 +3187,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	// Libraries
 	var React = __webpack_require__(1);
-	var CardLayout = __webpack_require__(42);
+	var CardLayout = __webpack_require__(43);
 
 	// Styles
-	__webpack_require__(43);
+	__webpack_require__(44);
 
 	// LayoutPanel class
 
@@ -3171,7 +3268,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};module.exports = LayoutPanel;
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3243,13 +3340,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	};module.exports = CardLayout;
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(44);
+	var content = __webpack_require__(45);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(12)(content, {});
@@ -3269,7 +3366,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(11)();
@@ -3283,7 +3380,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3352,7 +3449,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};module.exports = PanelButton;
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3369,7 +3466,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var React = __webpack_require__(1);
 
 	// Styles
-	__webpack_require__(47);
+	__webpack_require__(48);
 
 	// Card
 	var Card = __webpack_require__(3);
@@ -3407,13 +3504,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	};module.exports = Canvas;
 
 /***/ }),
-/* 47 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(48);
+	var content = __webpack_require__(49);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(12)(content, {});
@@ -3433,7 +3530,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 48 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(11)();
@@ -3447,7 +3544,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3458,7 +3555,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	var helpers = __webpack_require__(28);
+	var helpers = __webpack_require__(29);
 
 	/**
 	 * @name SVGToImage
