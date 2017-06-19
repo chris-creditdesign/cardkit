@@ -24,7 +24,7 @@ class ThemePanel extends React.Component {
 
     return (
       <div className={'panel panel--theme' + (this.props.active ? ' panel--show' : '')}>
-        <h3>Theme</h3>
+        <h3>Background colour</h3>
 
         <select defaultValue={this.props.theme} onChange={this.handleUpdate}>
           {Object.keys(this.props.themes).map((name, index) => {
