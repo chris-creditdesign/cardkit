@@ -23,6 +23,7 @@ class ColorControl extends React.Component {
 
   render () {
     if (!this.props.layer.editable[this.props.name]) return null;
+    if (this.props.layer.type === 'text') return null;
 
     if (typeof this.props.layer.editable[this.props.name] === 'object' && this.props.layer.editable[this.props.name].options) {
       return (

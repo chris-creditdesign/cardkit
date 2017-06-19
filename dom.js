@@ -2673,6 +2673,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    key: 'render',
 	    value: function render() {
 	      if (!this.props.layer.editable[this.props.name]) return null;
+	      if (this.props.layer.type === 'text') return null;
 
 	      if (_typeof(this.props.layer.editable[this.props.name]) === 'object' && this.props.layer.editable[this.props.name].options) {
 	        return React.createElement(
