@@ -17,9 +17,9 @@ class TextAnchorControl extends React.Component {
 
   render () {
     let alignOpts = [
-      { attr: 'start', show: 'left' },
-      { attr: 'middle', show: 'center' },
-      { attr: 'end', show: 'right' }
+      { attr: 'start', show: 'Left' },
+      { attr: 'middle', show: 'Center' },
+      { attr: 'end', show: 'Right' }
     ];
 
     if (!this.props.layer.editable.textAnchor) return null;

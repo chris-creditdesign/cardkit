@@ -7,7 +7,7 @@ require('./style.scss');
 // Require in our controls
 const TextControl = require('../Controls/TextControl');
 const TextAnchorControl = require('../Controls/TextAnchorControl');
-const TextFillControl = require('../Controls/TextFillControl');
+const LimitedFillControl = require('../Controls/LimitedFillControl');
 const SizeControl = require('../Controls/SizeControl');
 const ColorControl = require('../Controls/ColorControl');
 const SourceControl = require('../Controls/SourceControl');
@@ -43,8 +43,8 @@ class LayerConfig extends React.Component {
             <TextAnchorControl layer={this.props.layer}
               onNewValue={this.handleChange} />
 
-            {/** Text Fill **/}
-            <TextFillControl layer={this.props.layer}
+            {/** Limited Fill **/}
+            <LimitedFillControl layer={this.props.layer}
               onNewValue={this.handleChange} />
 
             {/** Font Size **/}

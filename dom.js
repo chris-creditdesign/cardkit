@@ -2001,7 +2001,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	// Require in our controls
 	var TextControl = __webpack_require__(26);
 	var TextAnchorControl = __webpack_require__(27);
-	var TextFillControl = __webpack_require__(28);
+	var LimitedFillControl = __webpack_require__(28);
 	var SizeControl = __webpack_require__(29);
 	var ColorControl = __webpack_require__(31);
 	var SourceControl = __webpack_require__(33);
@@ -2049,7 +2049,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	              onNewValue: this.handleChange }),
 	            React.createElement(TextAnchorControl, { layer: this.props.layer,
 	              onNewValue: this.handleChange }),
-	            React.createElement(TextFillControl, { layer: this.props.layer,
+	            React.createElement(LimitedFillControl, { layer: this.props.layer,
 	              onNewValue: this.handleChange }),
 	            React.createElement(SizeControl, { name: 'fontSize',
 	              layer: this.props.layer,
@@ -2328,7 +2328,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      var alignOpts = [{ attr: 'start', show: 'left' }, { attr: 'middle', show: 'center' }, { attr: 'end', show: 'right' }];
+	      var alignOpts = [{ attr: 'start', show: 'Left' }, { attr: 'middle', show: 'Center' }, { attr: 'end', show: 'Right' }];
 
 	      if (!this.props.layer.editable.textAnchor) return null;
 
@@ -2388,19 +2388,19 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	// TextFill class
 
-	var TextFillControl = function (_React$Component) {
-	  _inherits(TextFillControl, _React$Component);
+	var LimitedFillControl = function (_React$Component) {
+	  _inherits(LimitedFillControl, _React$Component);
 
-	  function TextFillControl(props) {
-	    _classCallCheck(this, TextFillControl);
+	  function LimitedFillControl(props) {
+	    _classCallCheck(this, LimitedFillControl);
 
-	    var _this = _possibleConstructorReturn(this, (TextFillControl.__proto__ || Object.getPrototypeOf(TextFillControl)).call(this, props));
+	    var _this = _possibleConstructorReturn(this, (LimitedFillControl.__proto__ || Object.getPrototypeOf(LimitedFillControl)).call(this, props));
 
 	    _this.handleChange = _this.handleChange.bind(_this);
 	    return _this;
 	  }
 
-	  _createClass(TextFillControl, [{
+	  _createClass(LimitedFillControl, [{
 	    key: 'handleChange',
 	    value: function handleChange(e) {
 	      var element = e.target;
@@ -2409,48 +2409,52 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      var fillOpts = [{ attr: '#FFFFFF', show: 'White' }, { attr: '#808080', show: 'Grey' }, { attr: '#000000', show: 'Black' }];
+	      var fillOpts = [{ attr: '#000000', show: 'Black' }, { attr: '#808080', show: 'Grey' }, { attr: '#FFFFFF', show: 'White' }];
 
 	      if (!this.props.layer.editable.fill) return null;
 
-	      if (this.props.layer.editable.fill === true && this.props.layer.type === 'text') {
+	      if (this.props.layer.editable.fill === true) {
 	        // Check that this is a text layer
-	        return React.createElement(
-	          'div',
-	          null,
-	          React.createElement(
-	            'strong',
+	        if (this.props.layer.type === 'text' || this.props.layer.type === 'path' || this.props.layer.type === 'rectangle') {
+	          return React.createElement(
+	            'div',
 	            null,
-	            'Colour'
-	          ),
-	          React.createElement(
-	            'select',
-	            { defaultValue: this.props.layer.fill,
-	              onChange: this.handleChange },
-	            fillOpts.map(function (option, index) {
-	              return React.createElement(
-	                'option',
-	                { key: index, value: option.attr },
-	                option.show
-	              );
-	            })
-	          )
-	        );
+	            React.createElement(
+	              'strong',
+	              null,
+	              'Colour'
+	            ),
+	            React.createElement(
+	              'select',
+	              { defaultValue: this.props.layer.fill,
+	                onChange: this.handleChange },
+	              fillOpts.map(function (option, index) {
+	                return React.createElement(
+	                  'option',
+	                  { key: index, value: option.attr },
+	                  option.show
+	                );
+	              })
+	            )
+	          );
+	        } else {
+	          return null;
+	        }
 	      } else {
 	        return null;
 	      }
 	    }
 	  }]);
 
-	  return TextFillControl;
+	  return LimitedFillControl;
 	}(React.Component);
 
-	TextFillControl.propTypes = {
+	LimitedFillControl.propTypes = {
 	  onNewValue: React.PropTypes.func.isRequired,
 	  layer: React.PropTypes.object.isRequired
 
 	  // Export
-	};module.exports = TextFillControl;
+	};module.exports = LimitedFillControl;
 
 /***/ }),
 /* 29 */
@@ -2673,7 +2677,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    key: 'render',
 	    value: function render() {
 	      if (!this.props.layer.editable[this.props.name]) return null;
-	      if (this.props.layer.type === 'text') return null;
+	      if (this.props.layer.type === 'text' || this.props.layer.type === 'path' || this.props.layer.type === 'rectangle') return null;
 
 	      if (_typeof(this.props.layer.editable[this.props.name]) === 'object' && this.props.layer.editable[this.props.name].options) {
 	        return React.createElement(
