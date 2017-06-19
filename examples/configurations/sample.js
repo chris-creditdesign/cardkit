@@ -41,7 +41,8 @@ var configuration = {
           min: 100,
           max: 400,
           step: 50
-        }
+        },
+        fill: true
       }
     },
     headline: {
@@ -72,7 +73,8 @@ var configuration = {
           min: 10,
           max: 50,
           step: 10
-        }
+        },
+        fill: true
       }
     },
     text: {
