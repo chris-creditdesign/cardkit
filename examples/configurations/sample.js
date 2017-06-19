@@ -59,6 +59,7 @@ var configuration = {
       fontWeight: 'bold',
       textAnchor: 'start',
       draggable: true,
+      transform: 'rotate(0,0,0)',
       editable: {
         text: {
           options: [
