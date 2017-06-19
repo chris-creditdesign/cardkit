@@ -528,6 +528,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	              fill: layerData.fill,
 	              draggable: layerData.draggable,
 	              transform: layerData.transform,
+	              opacity: layerData.opacity,
 	              key: key }));
 	            break;
 	        }

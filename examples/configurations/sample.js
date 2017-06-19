@@ -16,6 +16,7 @@ var configuration = {
       get height () {
         return this.width;
       },
+      opacity: 0.5,
       editable: {
         src: true,
         width: {
@@ -126,6 +127,13 @@ var configuration = {
         text: true
       },
       text: '// Require CardKit and CardKitDOM\nconst CardKit = require(\'cardkit\');\nconst CardKitDOM = require(\'cardkit/dom\');\n\n// Create configuration - See the GitHub wiki for documentation\nconst configuration = {};\n\n// Setup card and renderer\nconst card = new CardKit(configuration);\nconst renderer = new CardKitDOM(card);\n\n// Render the UI to a DOM element with the ID of \'ui\'\nrenderer.renderUI(\'ui\');'
+    },
+    circleLogo: {
+      name: 'circleLogo',
+      type: 'path',
+      fill: '#ffffff',
+      d: 'M90,45c0,24.9-20.1,45-45,45S0,69.9,0,45S20.1,0,45,0S90,20.1,90,45z M51.7,20.4c-10.2,0-14.6,8.5-16.5,8.5 c-0.6,0-0.8-0.8-0.8-1.5v-5.2c0-1.2-0.2-2.3-1-2.3c-0.5,0-1.2,0.5-1.6,0.9c-4.4,3.8-8.7,6.8-13.4,8.3c-0.5,0.2-0.8,0.3-0.8,0.9 c0,0.7,1,0.7,2.7,0.9c1.3,0.2,2.4,0.7,2.9,1.3c1,1.3,1,5.5,1,12.2c0,9.7-0.1,16-0.6,19.7c-0.4,2.4-1.6,2.8-4,3.4 c-1.9,0.5-3.5,0.6-3.5,1.6c0,0.7,0.5,0.8,1.9,0.8c0.8,0,9-0.4,10.9-0.4c1.9,0,9.5,0.4,10.6,0.4c1.1,0,2.5,0.1,2.5-0.9 c0-0.9-2.4-1.2-3.7-1.7c-1.6-0.7-3-1.6-3.3-3.2c-0.6-3-0.7-7.1-0.7-15.8c0-6.5,0.1-13.3,1.9-16.6c1.3-2.3,4.9-5.2,9-5.2 c4,0,6.5,0.8,8.8,3.5c2.3,2.7,2.3,8.6,2.3,18.5c0,8,0,12.1-0.4,15c-0.4,2.8-1.8,3.3-4,4.1c-1.8,0.6-4,0.5-4,1.6 c0,0.6,0.9,0.7,2.8,0.7c1.4,0,7.9-0.4,10.8-0.4c2.9,0,9,0.4,10.3,0.4c1.2,0,2.2-0.2,2.2-0.9c0-0.9-1.6-0.9-2.7-1.2 c-4.8-1.2-4.8-1-4.8-14.3c0-3.3,0.1-8,0.1-15.4c0-3.5-0.4-8.8-2.3-11.4C61.8,23.1,58,20.4,51.7,20.4z',
+      opacity: 0.5
     }
   }
 };
