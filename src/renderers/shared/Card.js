@@ -184,6 +184,7 @@ class Card extends React.Component {
             width={layerData.width}
             draggable={layerData.draggable}
             transform={layerData.transform}
+            opacity={layerData.opacity}
             key={key} />);
           break;
         case 'circle':
@@ -193,6 +194,7 @@ class Card extends React.Component {
             radius={layerData.radius}
             draggable={layerData.draggable}
             transform={layerData.transform}
+            opacity={layerData.opacity}
             key={key} />);
           break;
         case 'ellipse':
@@ -203,6 +205,7 @@ class Card extends React.Component {
             radiusY={layerData.radiusY}
             draggable={layerData.draggable}
             transform={layerData.transform}
+            opacity={layerData.opacity}
             key={key} />);
           break;
         case 'line':
@@ -211,6 +214,7 @@ class Card extends React.Component {
             stroke={layerData.stroke || layerData.fill}
             draggable={layerData.draggable}
             transform={layerData.transform}
+            opacity={layerData.opacity}
             key={key} />);
           break;
         case 'path':

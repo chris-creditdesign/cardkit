@@ -494,6 +494,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	              width: layerData.width,
 	              draggable: layerData.draggable,
 	              transform: layerData.transform,
+	              opacity: layerData.opacity,
 	              key: key }));
 	            break;
 	          case 'circle':
@@ -503,6 +504,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	              radius: layerData.radius,
 	              draggable: layerData.draggable,
 	              transform: layerData.transform,
+	              opacity: layerData.opacity,
 	              key: key }));
 	            break;
 	          case 'ellipse':
@@ -513,6 +515,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	              radiusY: layerData.radiusY,
 	              draggable: layerData.draggable,
 	              transform: layerData.transform,
+	              opacity: layerData.opacity,
 	              key: key }));
 	            break;
 	          case 'line':
@@ -521,6 +524,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	              stroke: layerData.stroke || layerData.fill,
 	              draggable: layerData.draggable,
 	              transform: layerData.transform,
+	              opacity: layerData.opacity,
 	              key: key }));
 	            break;
 	          case 'path':

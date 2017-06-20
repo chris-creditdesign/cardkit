@@ -32,6 +32,7 @@ var configuration = {
       y: 0,
       width: 1000,
       height: 350,
+      opacity: 0.5,
       editable: {
         width: {
           step: 30,
@@ -42,7 +43,12 @@ var configuration = {
           max: 400,
           step: 50
         },
-        fill: true
+        fill: true,
+        opacity: {
+          min: 0,
+          max: 1,
+          step: 0.1
+        }
       }
     },
     headline: {
