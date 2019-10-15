@@ -2593,13 +2593,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	   * @return {string} The slugified string
 	   */
 	  slugify: function slugify(string) {
-	    return string.toString // Convert to a string
-	    ().toLowerCase // Convert to lowercase
-	    ().replace(/\s+/g, '-' // Replace spaces with -
-	    ).replace(/[^\w-]+/g, '' // Remove all non-word chars
-	    ).replace(/--+/g, '-' // Replace multiple - with single -
-	    ).replace(/^-+/, '' // Trim - from start of text
-	    ).replace(/-+$/, ''); // Trim - from end of text
+	    return string.toString() // Convert to a string
+	    .toLowerCase() // Convert to lowercase
+	    .replace(/\s+/g, '-') // Replace spaces with -
+	    .replace(/[^\w-]+/g, '') // Remove all non-word chars
+	    .replace(/--+/g, '-') // Replace multiple - with single -
+	    .replace(/^-+/, '') // Trim - from start of text
+	    .replace(/-+$/, ''); // Trim - from end of text
 	  },
 
 	  /**
