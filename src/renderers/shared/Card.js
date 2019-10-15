@@ -161,6 +161,7 @@ class Card extends React.Component {
             transform={layerData.transform}
             opacity={layerData.opacity}
             smartQuotes={layerData.smartQuotes}
+            letterSpacing={layerData.letterSpacing}
             key={key}>
             {text}
           </Text>);
@@ -215,6 +216,7 @@ class Card extends React.Component {
             draggable={layerData.draggable}
             transform={layerData.transform}
             opacity={layerData.opacity}
+            strokeWidth={layerData.strokeWidth}
             key={key} />);
           break;
         case 'path':

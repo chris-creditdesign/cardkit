@@ -471,6 +471,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                transform: layerData.transform,
 	                opacity: layerData.opacity,
 	                smartQuotes: layerData.smartQuotes,
+	                letterSpacing: layerData.letterSpacing,
 	                key: key },
 	              text
 	            ));
@@ -525,6 +526,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	              draggable: layerData.draggable,
 	              transform: layerData.transform,
 	              opacity: layerData.opacity,
+	              strokeWidth: layerData.strokeWidth,
 	              key: key }));
 	            break;
 	          case 'path':
