@@ -18,7 +18,6 @@ class LimitedFillControl extends React.Component {
   render () {
     let fillOpts = [
       { attr: '#FFFFFF', show: 'White' },
-      { attr: '#808080', show: 'Grey' },
       { attr: '#000000', show: 'Black' }
     ];
 

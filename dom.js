@@ -2415,7 +2415,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      var fillOpts = [{ attr: '#FFFFFF', show: 'White' }, { attr: '#808080', show: 'Grey' }, { attr: '#000000', show: 'Black' }];
+	      var fillOpts = [{ attr: '#FFFFFF', show: 'White' }, { attr: '#000000', show: 'Black' }];
 
 	      if (!this.props.layer.editable.fill) return null;
 
