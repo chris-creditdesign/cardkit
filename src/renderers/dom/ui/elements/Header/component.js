@@ -17,6 +17,8 @@ class Header extends React.Component {
       <header className="header">
         <img src={images.logo} />
 
+        <a href="./templates/nature-sm-template.psd" target="_blank">Download PSD template</a>
+
         <a href="http://github.com/times/cardkit" target="_blank">About CardKit</a>
       </header>
     );

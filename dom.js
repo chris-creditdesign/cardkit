@@ -1568,6 +1568,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	        React.createElement('img', { src: images.logo }),
 	        React.createElement(
 	          'a',
+	          { href: './templates/nature-sm-template.psd', target: '_blank' },
+	          'Download PSD template'
+	        ),
+	        React.createElement(
+	          'a',
 	          { href: 'http://github.com/times/cardkit', target: '_blank' },
 	          'About CardKit'
 	        )
@@ -1618,7 +1623,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 	// module
-	exports.push([module.id, ".header {\n  background: #4da5bd;\n  height: 5.7rem;\n  display: flex;\n  position: relative;\n  z-index: 10; }\n  .header img {\n    padding: 1rem;\n    margin: 0;\n    display: block;\n    width: 16.2rem;\n    height: 5.7rem; }\n  .header a {\n    margin-right: 0;\n    margin-left: auto;\n    padding: 0 2rem;\n    color: #FFFFFF;\n    text-transform: uppercase;\n    letter-spacing: 1px;\n    text-decoration: none;\n    height: 5.7rem;\n    line-height: 5.7rem; }\n    .header a:hover {\n      background: rgba(0, 0, 0, 0.4); }\n", ""]);
+	exports.push([module.id, ".header {\n  background: #4da5bd;\n  height: 5.7rem;\n  display: flex;\n  position: relative;\n  z-index: 10; }\n  .header img {\n    padding: 1rem;\n    margin: 0;\n    display: block;\n    width: 16.2rem;\n    height: 5.7rem; }\n  .header a {\n    margin-right: 0;\n    margin-left: 0;\n    padding: 0 2rem;\n    color: #FFFFFF;\n    text-transform: uppercase;\n    letter-spacing: 1px;\n    text-decoration: none;\n    height: 5.7rem;\n    line-height: 5.7rem; }\n    .header a:hover {\n      background: rgba(0, 0, 0, 0.4); }\n  .header a:first-of-type {\n    margin-left: auto; }\n", ""]);
 
 	// exports
 
